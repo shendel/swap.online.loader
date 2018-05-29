@@ -4,7 +4,10 @@
 			var body = _mc.$(_mc.$(document.getElementsByTagName('BODY')[0]));
 			var iframeHolder = null;
 			var swapOnlineIframe = null;
-			var createIframe = function (style) {
+			var navigateIframe = function (json) {
+				swapOnlineIframe.src = "https://shendel.github.io/swap.online.loader/index.html#"+json;
+			}
+			var createIframe = function (json) {
 				var holder = _mc.MakeFW(document.createElement("DIV"));
 					holder.classAdd("swap-online-window");
 				var holderBG = _mc.MakeFW(document.createElement("DIV"));
@@ -20,7 +23,7 @@
 					close.href = "#";
 					holder.append(close);
 				var iframe = _mc.MakeFW(document.createElement("IFRAME"));
-					iframe.src = "/swaponlinebutton/swaponline/index.html?style="+style;
+					iframe.src = "https://shendel.github.io/swap.online.loader/index.html#"+json;
 					iframe.border = 0;
 				
 					holdifr.append(iframe);
@@ -44,7 +47,11 @@
 					}
 					if (e.target.classHas('swap-online-button')) {
 						e.preventDefault();
-						if (iframeHolder===null) createIframe(e.target.gA("data-theme"));
+						if (iframeHolder===null) {
+							createIframe(e.target.gA("data-json"));
+						} else {
+							navigateIframe(e.target.gA("data-json"));
+						}
 						body.classAdd("swap-online-opened");
 						iframeHolder.toTop();
 					}
