@@ -32,6 +32,7 @@
 				body.append(iframeHolder);
 			}
 			if (body) {
+				console.log("Body ok");
 				window.addEventListener('message', function(e) { 
 					if (e.data.swaponlineheight!==undefined) {
 						if (swapOnlineIframe) {
@@ -45,7 +46,10 @@
 						e.preventDefault();
 						body.classDel("swap-online-opened");
 					}
+					console.log("Body click");
 					if (e.target.classHas('swap-online-button')) {
+						console.log("A click");
+						console.log(e.target.gA("data-json"));
 						e.preventDefault();
 						if (iframeHolder===null) {
 							createIframe(e.target.gA("data-json"));
