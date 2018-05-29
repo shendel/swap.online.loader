@@ -63,6 +63,7 @@
 			}
 		} );
 	};
+	console.log("Button.js included");
 	var _wait = function () {
 		if (window._mc!==undefined) {
 			if (window._mc.wcDOMReady3!==undefined) {
