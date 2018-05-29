@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/swaponlinebutton/core.js"></script>
+		<script type="text/javascript">
+			wcDOMReady3( function () {
+				console.log("Swap loaded");
+				window.parent.postMessage( { swaponlineheight : window._mc.BodyHeight() } , '*' );
+				window.setInterval( function () {
+					window.parent.postMessage( { swaponlineheight : window._mc.BodyHeight() } , '*' );
+				}, 1000 );
+			} );
+		</script>
+	</head>
+	<body>
+		<h1>Swap online iframe app</h1>
+		<div style="width: 100px; height: 600px; background: red;"></div>
+	</body>
+</html>
