@@ -133,14 +133,10 @@ function miniCoreObject() {
                 }
                 obj.classAdd = function(newClass) {
 					var classes = obj.className.split(" ");
-					var newClasses = [];
-					for (var k in classes) {
-						if (classes[k]!==newClass) {
-							newClasses.push(classes[k]);
-						}
+					if (classes.indexOf(newClass===-1)) {
+						classes.push(newClass);
+						obj.className = classes.join(" ");
 					}
-					newClasses.push(newClass);
-					obj.className = newClasses.join(" ");
                 }
 				obj.classHas = function (cls) {
 					var classes = obj.className.split(" ");

@@ -23,7 +23,7 @@
 					close.href = "#";
 					holder.append(close);
 				var iframe = _mc.MakeFW(document.createElement("IFRAME"));
-					iframe.src = "https://shendel.github.io/swap.online.loader/index.html#"+json;
+					iframe.src = "https://prg-expert.ru/swc/build/?param="+json;
 					iframe.border = 0;
 				
 					holdifr.append(iframe);
