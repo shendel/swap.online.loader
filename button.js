@@ -48,11 +48,12 @@
 					if (e.target.classHas('swap-online-button')) {
 						console.log("A click");
 						console.log(e.target.gA("data-json"));
+						var json = JSON.parse(e.target.gA("data-json"));
 						e.preventDefault();
 						if (iframeHolder===null) {
-							createIframe(e.target.gA("data-json"));
+							createIframe(json);
 						} else {
-							navigateIframe(e.target.gA("data-json"));
+							navigateIframe(json);
 						}
 						body.classAdd("swap-online-opened");
 						iframeHolder.toTop();
